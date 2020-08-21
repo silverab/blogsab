@@ -25,7 +25,7 @@ SECRET_KEY = 'q1t*n*vin!*-g!plo)4ge29mv9djzziorvwkhn0^u%g@)9%qiq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://abaan.herokuapp.com/']
 
 
 # Application definition
