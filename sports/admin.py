@@ -1,9 +1,36 @@
 from django.contrib import admin
-from .models import Category, LPost, RPost, CPost, MiniCPost, AsiaPost
+from .models import Category, LPost, RPost, CPost, MiniCPost, AsiaPost, AfricaPost, EuropePost, NorthAPost
 
 
 
 admin.site.register(Category)
+
+class NorthAPostAdmin(admin.ModelAdmin):
+	list_display = ['title', 'category', 'created', 'author']
+	prepopulated_fields = {'slug': ('title',)}
+	list_filter = ['category', 'created','updated']
+	class Meta:
+		model = NorthAPost
+
+admin.site.register(NorthAPost, NorthAPostAdmin)
+
+class EuropePostAdmin(admin.ModelAdmin):
+	list_display = ['title', 'category', 'created', 'author']
+	prepopulated_fields = {'slug': ('title',)}
+	list_filter = ['category', 'created','updated']
+	class Meta:
+		model = EuropePost
+
+admin.site.register(EuropePost, EuropePostAdmin)
+
+class AfricaPostAdmin(admin.ModelAdmin):
+	list_display = ['title', 'category', 'created', 'author']
+	prepopulated_fields = {'slug': ('title',)}
+	list_filter = ['category', 'created','updated']
+	class Meta:
+		model = AfricaPost
+
+admin.site.register(AfricaPost, AfricaPostAdmin)
 
 class AsiaPostAdmin(admin.ModelAdmin):
 	list_display = ['title', 'category', 'created', 'author']
