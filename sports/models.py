@@ -97,3 +97,57 @@ class AsiaPost(models.Model):
 
 	def __str__(self):
 		return str(self.title)
+
+class AfricaPost(models.Model):
+	title = models.CharField(max_length=200)
+	slug = models.SlugField(unique=True)
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	content = models.TextField()
+	created = models.DateTimeField(auto_now_add=True, auto_now=False)
+	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+	size_1 = models.ImageField(upload_to='size_1/', null=True, blank=True)
+	size_2 = models.ImageField(upload_to='size_2/', null=True, blank=True)
+
+	class Meta:
+		unique_together = ('title', 'slug')
+		ordering = ['-created']
+
+	def __str__(self):
+		return str(self.title)
+
+class EuropePost(models.Model):
+	title = models.CharField(max_length=200)
+	slug = models.SlugField(unique=True)
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	content = models.TextField()
+	created = models.DateTimeField(auto_now_add=True, auto_now=False)
+	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+	size_1 = models.ImageField(upload_to='size_1/', null=True, blank=True)
+	size_2 = models.ImageField(upload_to='size_2/', null=True, blank=True)
+
+	class Meta:
+		unique_together = ('title', 'slug')
+		ordering = ['-created']
+
+	def __str__(self):
+		return str(self.title)
+
+class NorthAPost(models.Model):
+	title = models.CharField(max_length=200)
+	slug = models.SlugField(unique=True)
+	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	content = models.TextField()
+	created = models.DateTimeField(auto_now_add=True, auto_now=False)
+	updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+	size_1 = models.ImageField(upload_to='size_1/', null=True, blank=True)
+	size_2 = models.ImageField(upload_to='size_2/', null=True, blank=True)
+
+	class Meta:
+		unique_together = ('title', 'slug')
+		ordering = ['-created']
+
+	def __str__(self):
+		return str(self.title)
